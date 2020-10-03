@@ -5,7 +5,7 @@ import java.util.List;
 
 class Folder extends VirtualDiskObject{
 
-    List<Folder> subFolders;
+    private final List<Folder> subFolders;
 
     Folder(String name) {
         this.name = name;

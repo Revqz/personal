@@ -10,7 +10,6 @@ abstract class VirtualDiskObject {
     int size;
     int uniqueNumber;
 
-
     String getName() {
         return name;
     }
@@ -23,8 +22,8 @@ abstract class VirtualDiskObject {
         return objectUniqueNumber++;
     }
 
-    int getUniqueNumber() {
-        return uniqueNumber;
+    static void resetObjectUniqueNumber() {
+        objectUniqueNumber = 1;
     }
 
     abstract void addSubFolderToFolderList(SubFolder subFolder);
