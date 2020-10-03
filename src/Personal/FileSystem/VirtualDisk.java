@@ -54,7 +54,7 @@ class VirtualDisk {
     void createSubfolder(String subFolderName, String folderName) {
         SubFolder subFolder = new SubFolder(subFolderName);
         VirtualDiskObject folder = findVirtualDiskObject(folderName);
-        if (isLessThan20CharName(subFolder) && isEnoughMemory(subFolder) && folder != null) {
+        if (nameIsLessThan20Char(subFolder) && isEnoughMemory(subFolder) && folder != null) {
             folder.addSubFolderToFolderList(subFolder);
             writingToMemoryArray(subFolder);
             diskMemoryUsed += subFolder.size;
@@ -64,7 +64,7 @@ class VirtualDisk {
     }
 
     void addingVirtualDiskObjectToDisk(VirtualDiskObject virtualDiskObject) {
-        if (isLessThan20CharName(virtualDiskObject) && isEnoughMemory(virtualDiskObject)) {
+        if (nameIsLessThan20Char(virtualDiskObject) && isEnoughMemory(virtualDiskObject)) {
             virtualDiskObjects.add(virtualDiskObject);
             writingToMemoryArray(virtualDiskObject);
             diskMemoryUsed += virtualDiskObject.getSize();
@@ -73,7 +73,7 @@ class VirtualDisk {
         }
     }
 
-    void folderDeletion(String name) {
+    void virtualDiskObjectDeletion(String name) {
         VirtualDiskObject virtualDiskObject = findVirtualDiskObject(name);
         if (virtualDiskObject != null) {
             virtualDiskObjects.remove(virtualDiskObject);
@@ -95,33 +95,27 @@ class VirtualDisk {
     //Надо найти более оптимальный вариант заполнения ячеек памяти
     private void writingToMemoryArray(VirtualDiskObject virtualDiskObject) {
         int counter = 0;
-        int memoryIndex = 0;
+        int memoryCellIndex = 0;
         while(virtualDiskObject.size != counter) {
-            if (diskArray[memoryIndex] == 0) {
-                diskArray[memoryIndex] = virtualDiskObject.uniqueNumber;
+            if (diskArray[memoryCellIndex] == 0) {
+                diskArray[memoryCellIndex] = virtualDiskObject.uniqueNumber;
                 counter++;
             }
-            memoryIndex++;
+            memoryCellIndex++;
         }
     }
 
     private void erasingFromMemoryArray(VirtualDiskObject virtualDiskObject) {
-        for (int i = findingUniqueNumberInDiskArray(virtualDiskObject);
-             i < findingUniqueNumberInDiskArray(virtualDiskObject) + virtualDiskObject.size; i++) {
-            diskArray[i] = 0;
-        }
-    }
-
-    private int findingUniqueNumberInDiskArray(VirtualDiskObject virtualDiskObject) {
-        int uniqueNumber = 0;
+        int counter = virtualDiskObject.size;
         for (int i = 0; i < diskArray.length; i++) {
             if (virtualDiskObject.uniqueNumber == diskArray[i]) {
-                uniqueNumber = i;
+                diskArray[i] = 0;
+                counter--;
+            }
+            if (counter == 0) {
                 break;
             }
         }
-
-        return uniqueNumber;
     }
 
     void diskDefragmentation() {
@@ -139,7 +133,7 @@ class VirtualDisk {
         }
     }
 
-    private boolean isLessThan20CharName(VirtualDiskObject virtualDiskObject) {
+    private boolean nameIsLessThan20Char(VirtualDiskObject virtualDiskObject) {
         return virtualDiskObject.getName().length() <= Folder.MAX_CHAR;
     }
 

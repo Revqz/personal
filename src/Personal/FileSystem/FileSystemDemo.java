@@ -22,7 +22,7 @@ class FileSystemDemo {
         PrintInformation.printVirtualDiskObjects(virtualDisk);
 
         System.out.println("Deleting folder 'Test2'");
-        virtualDisk.folderDeletion("Test2");
+        virtualDisk.virtualDiskObjectDeletion("Test2");
 
         PrintInformation.printVirtualDiskCurrentMemoryUsed(virtualDisk);
         PrintInformation.printVirtualDiskMemoryArray(virtualDisk);
@@ -75,8 +75,8 @@ class FileSystemDemo {
         PrintInformation.printVirtualDiskCurrentMemoryUsed(virtualDisk1);
 
         System.out.println("Deleting text file and folder 'Test5'");
-        virtualDisk1.folderDeletion("Random text");
-        virtualDisk1.folderDeletion("Test5");
+        virtualDisk1.virtualDiskObjectDeletion("Random text");
+        virtualDisk1.virtualDiskObjectDeletion("Test5");
 
         PrintInformation.printVirtualDiskCurrentMemoryUsed(virtualDisk1);
         PrintInformation.printVirtualDiskMemoryArray(virtualDisk1);
