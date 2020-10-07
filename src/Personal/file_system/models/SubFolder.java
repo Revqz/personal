@@ -1,8 +1,8 @@
-package Personal.FileSystem;
+package Personal.file_system.models;
 
-class SubFolder extends Folder {
+public class SubFolder extends Folder {
 
-    SubFolder(String name) {
+    public SubFolder(String name) {
         super(name);
     }
 

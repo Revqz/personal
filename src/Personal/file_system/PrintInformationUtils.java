@@ -1,8 +1,11 @@
-package Personal.FileSystem;
+package Personal.file_system;
 
 import java.util.Arrays;
 
-class PrintInformation {
+class PrintInformationUtils {
+
+    private PrintInformationUtils() {
+    }
 
     static void printVirtualDiskName(VirtualDisk virtualDisk) {
         System.out.println("Virtual disk name: " + virtualDisk.getDiskName());

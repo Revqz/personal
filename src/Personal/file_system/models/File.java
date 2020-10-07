@@ -1,17 +1,19 @@
-package Personal.FileSystem;
+package Personal.file_system.models;
 
-class File extends VirtualDiskObject {
+import Personal.file_system.FileType;
+
+public class File extends VirtualDiskObject {
 
     FileType fileType;
 
-    File(String name, int size, FileType fileType) {
+    public File(String name, int size, FileType fileType) {
         this.name = name;
         this.size = MIN_SIZE + size;
         this.fileType = fileType;
-        this.uniqueNumber = setUniqueNumber();
+        this.uniqueNumber = 0;
     }
 
-    void addSubFolderToFolderList(SubFolder subFolder) {
+    public void addSubFolderToFolderList(SubFolder subFolder) {
     }
 
     @Override

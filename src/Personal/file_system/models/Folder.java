@@ -1,20 +1,20 @@
-package Personal.FileSystem;
+package Personal.file_system.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Folder extends VirtualDiskObject{
+public class Folder extends VirtualDiskObject {
 
     private final List<Folder> subFolders;
 
-    Folder(String name) {
+    public Folder(String name) {
         this.name = name;
         this.size = MIN_SIZE;
-        this.uniqueNumber = setUniqueNumber();
+        this.uniqueNumber = 0;
         this.subFolders = new ArrayList<>();
     }
 
-    void addSubFolderToFolderList(SubFolder subFolderName) {
+    public void addSubFolderToFolderList(SubFolder subFolderName) {
         subFolders.add(subFolderName);
     }
 
