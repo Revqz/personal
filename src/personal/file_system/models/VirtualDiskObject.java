@@ -1,4 +1,4 @@
-package Personal.file_system.models;
+package personal.file_system.models;
 
 public abstract class VirtualDiskObject {
 
@@ -25,5 +25,5 @@ public abstract class VirtualDiskObject {
         this.uniqueNumber = uniqueNumber;
     }
 
-    public abstract void addSubFolderToFolderList(SubFolder subFolder);
+    public abstract void addSubFolderToFolderList(SubFolder subFolder) throws IllegalAccessException;
 }

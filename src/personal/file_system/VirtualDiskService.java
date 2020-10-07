@@ -1,9 +1,9 @@
-package Personal.file_system;
+package personal.file_system;
 
-import Personal.file_system.models.File;
-import Personal.file_system.models.Folder;
-import Personal.file_system.models.SubFolder;
-import Personal.file_system.models.VirtualDiskObject;
+import personal.file_system.models.File;
+import personal.file_system.models.Folder;
+import personal.file_system.models.SubFolder;
+import personal.file_system.models.VirtualDiskObject;
 
 import java.util.List;
 

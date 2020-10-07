@@ -1,4 +1,4 @@
-package Personal.file_system.models;
+package personal.file_system.models;
 
 import java.util.ArrayList;
 import java.util.List;

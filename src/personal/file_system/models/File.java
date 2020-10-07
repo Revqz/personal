@@ -1,6 +1,6 @@
-package Personal.file_system.models;
+package personal.file_system.models;
 
-import Personal.file_system.FileType;
+import personal.file_system.FileType;
 
 public class File extends VirtualDiskObject {
 
@@ -13,7 +13,8 @@ public class File extends VirtualDiskObject {
         this.uniqueNumber = 0;
     }
 
-    public void addSubFolderToFolderList(SubFolder subFolder) {
+    public void addSubFolderToFolderList(SubFolder subFolder) throws IllegalAccessException {
+        throw new IllegalAccessException();
     }
 
     @Override

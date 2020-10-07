@@ -1,4 +1,4 @@
-package Personal.file_system;
+package personal.file_system;
 
 public enum FileType {
     EXE,

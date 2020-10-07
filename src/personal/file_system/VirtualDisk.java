@@ -1,6 +1,6 @@
-package Personal.file_system;
+package personal.file_system;
 
-import Personal.file_system.models.VirtualDiskObject;
+import personal.file_system.models.VirtualDiskObject;
 
 import java.util.ArrayList;
 import java.util.List;

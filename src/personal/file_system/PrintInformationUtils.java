@@ -1,4 +1,4 @@
-package Personal.file_system;
+package personal.file_system;
 
 import java.util.Arrays;
 
