@@ -1,17 +1,17 @@
-package personal.file_system;
+package personal.file_system.miscs;
 
-class UniqueNumber {
+public class UniqueNumber {
 
     private static int objectUniqueNumber = 1;
 
     private UniqueNumber() {
     }
 
-    static int uniqueNumberGeneration() {
+    public static int uniqueNumberGeneration() {
         return objectUniqueNumber++;
     }
 
-    static void resetUniqueNumber() {
+    public static void resetUniqueNumber() {
         objectUniqueNumber = 1;
     }
 }

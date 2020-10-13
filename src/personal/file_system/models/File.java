@@ -1,8 +1,8 @@
 package personal.file_system.models;
 
-import personal.file_system.FileType;
+import personal.file_system.miscs.FileType;
 
-public class File extends VirtualDiskObject {
+public class File extends DiskObject {
 
     FileType fileType;
 
@@ -10,17 +10,17 @@ public class File extends VirtualDiskObject {
         this.name = name;
         this.size = MIN_SIZE + size;
         this.fileType = fileType;
-        this.uniqueNumber = 0;
     }
 
-    public void addSubFolderToFolderList(SubFolder subFolder) throws IllegalAccessException {
-        throw new IllegalAccessException();
+    public void setDirectory(String directory) {
+        this.directory = directory + "\\" + name + "." + fileType;
     }
 
     @Override
     public String toString() {
         return "File{" +
                 "fileType=" + fileType +
+                ", directory='" + directory + '\'' +
                 ", name='" + name + '\'' +
                 ", size=" + size +
                 ", uniqueNumber=" + uniqueNumber +
